@@ -18,7 +18,14 @@ A meta-framework integrating Eastern philosophy (Qi-Phenomenon-Form) with quantu
     *   `Meta-Theory.pdf`：理论的英文概述。
 3.  **完整体系**：
     *   **深度阅读与完整理论**：本理论的详细论述、完整论文及演变历程，请访问OSF项目主页：**https://doi.org/10.17605/OSF.IO/TXQ48**
+      
+## 📜 核心论文下载
+本理论的所有正式论文与核心框架脑图，均存档于OSF项目以确保证版本永久性与引用一致性。
+请点击下方链接访问并下载：
 
+- **《论引力的派生性》** (PDF): https://osf.io/93swu/
+- **气形象理论核心脑图** (PDF): https://osf.io/93swu/
+*前往项目主页以查看所有资源: https://osf.io/4amgp/
 ## 💬 互动与讨论
 我们欢迎任何深入的讨论与交流。您可以通过 [GitHub Issues] 功能提出您的问题或见解。
 本理论（气形象理论）的构建工作已暂告一段落。其核心框架已如种子般寄存数字土壤之中，以期其内在生命力能随时间自然生发。
