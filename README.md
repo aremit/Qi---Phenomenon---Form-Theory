@@ -1,3 +1,5 @@
+关于“引力作为时空派生属性”的核心论证已在OSF发布，欢迎阅读与讨论：
+​​《[文档名称]》​​：https://osf.io/yxsv2
 # Qi---Phenomenon---Form-Theory
 A meta-framework integrating Eastern philosophy (Qi-Phenomenon-Form) with quantum gravity and cosmology.
 ## 深度阅读与完整理论
