@@ -1,0 +1,922 @@
+﻿<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>气-形循环宇宙论 · 完整解说版</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: #000;
+            color: #fff;
+            font-family: 'Microsoft YaHei', Arial, sans-serif;
+            overflow: hidden;
+            background: radial-gradient(circle at center, #0a0a2a 0%, #000000 100%);
+        }
+        #container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+        .theory-panel {
+            position: fixed;
+            top: 15px;
+            left: 15px;
+            background: rgba(10, 15, 30, 0.92);
+            padding: 15px;
+            border-radius: 12px;
+            width: 320px;
+            backdrop-filter: blur(12px);
+            border: 1px solid #334;
+            z-index: 10;
+            box-shadow: 0 0 20px rgba(0, 150, 255, 0.3);
+        }
+        .theory-panel h2 {
+            color: #0ff;
+            margin-bottom: 12px;
+            text-align: center;
+            text-shadow: 0 0 12px rgba(0, 255, 255, 0.6);
+            font-size: 1.2em;
+        }
+        .theory-panel p {
+            margin: 8px 0;
+            line-height: 1.5;
+            color: #ddf;
+            font-size: 13px;
+        }
+        .theory-panel strong {
+            color: #0ff;
+            text-shadow: 0 0 6px rgba(0, 255, 255, 0.4);
+        }
+        .ui {
+            position: fixed;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(10, 15, 30, 0.92);
+            padding: 15px;
+            border-radius: 15px;
+            text-align: center;
+            width: 520px;
+            border: 1px solid #334;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 0 20px rgba(0, 150, 255, 0.3);
+            z-index: 10;
+        }
+        .phase-bar {
+            width: 100%;
+            height: 8px;
+            background: linear-gradient(90deg, #ff00ff, #ffff00, #00ffff, #ffff00, #ff0000);
+            border-radius: 4px;
+            margin: 12px 0;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+        }
+        .phase-progress {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.6);
+            width: 0%;
+            transition: width 0.3s ease;
+            box-shadow: 0 0 8px white;
+        }
+        .phase-marker {
+            position: absolute;
+            top: -6px;
+            width: 3px;
+            height: 20px;
+            background: white;
+            transform: translateX(-50%);
+            transition: left 0.3s ease;
+            box-shadow: 0 0 10px white;
+            z-index: 2;
+        }
+        .phase-labels {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            margin-top: 8px;
+            font-size: 0.9em;
+        }
+        .phase-label {
+            color: #aaa;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            text-shadow: 0 0 4px rgba(255,255,255,0.2);
+            padding: 3px 6px;
+            border-radius: 5px;
+            background: rgba(0, 0, 0, 0.3);
+            font-size: 12px;
+        }
+        .phase-label.active {
+            color: #fff;
+            transform: translateY(-2px) scale(1.05);
+            text-shadow: 0 0 10px currentColor;
+            background: rgba(0, 100, 200, 0.4);
+            box-shadow: 0 0 15px currentColor;
+        }
+        h1 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            background: linear-gradient(45deg, #ff00ff, #ffff00, #00ffff, #ff0000);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 15px rgba(0, 255, 255, 0.6);
+            letter-spacing: 1px;
+            font-weight: bold;
+        }
+        .controls {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 12px;
+            flex-wrap: wrap;
+        }
+        .btn {
+            background: linear-gradient(to bottom, #2a5caa, #1a3c7a);
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 13px;
+            font-weight: bold;
+            min-width: 100px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            border: 1px solid rgba(100, 150, 255, 0.4);
+        }
+        .btn:hover {
+            background: linear-gradient(to bottom, #3a7cca, #2a5caa);
+            transform: translateY(-3px) scale(1.03);
+            box-shadow: 0 6px 12px rgba(0, 150, 255, 0.5);
+        }
+        .btn:active {
+            transform: translateY(1px);
+        }
+        .status {
+            font-size: 1.1em;
+            padding: 12px;
+            margin: 15px auto;
+            border-radius: 10px;
+            background: rgba(0, 30, 60, 0.7);
+            max-width: 480px;
+            transition: all 0.4s ease;
+            min-height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-weight: bold;
+            text-shadow: 0 0 10px rgba(255,255,255,0.5);
+            border: 1px solid rgba(100, 200, 255, 0.4);
+            box-shadow: 0 0 20px rgba(0, 100, 200, 0.3);
+        }
+        .instructions {
+            margin-top: 8px;
+            font-size: 0.85em;
+            opacity: 0.8;
+            color: #aaf;
+            text-shadow: 0 0 6px rgba(200, 200, 255, 0.4);
+        }
+        .language-switcher {
+            position: fixed;
+            top: 15px;
+            right: 15px;
+            display: flex;
+            gap: 10px;
+            z-index: 20;
+        }
+        .lang-btn {
+            background: rgba(20, 30, 50, 0.85);
+            color: #aaf;
+            border: 1px solid #556;
+            padding: 6px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: bold;
+            font-size: 12px;
+        }
+        .lang-btn:hover {
+            background: rgba(40, 60, 100, 0.85);
+            color: #fff;
+            transform: scale(1.05);
+        }
+        .lang-btn.active {
+            background: rgba(60, 100, 180, 0.85);
+            color: #fff;
+            box-shadow: 0 0 12px rgba(100, 150, 255, 0.6);
+            transform: scale(1.05);
+        }
+        .fps-counter {
+            position: fixed;
+            top: 15px;
+            left: 15px;
+            color: #0ff;
+            font-family: monospace;
+            z-index: 10;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 5px 10px;
+            border-radius: 5px;
+            border: 1px solid #0ff;
+            text-shadow: 0 0 8px #0ff;
+            font-size: 12px;
+        }
+        .compatibility-warning {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(200, 50, 50, 0.95);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            z-index: 100;
+            max-width: 80%;
+            border: 2px solid red;
+            box-shadow: 0 0 20px red;
+        }
+        .pivot-indicator {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #ff0;
+            font-size: 2.2em;
+            font-weight: bold;
+            text-shadow: 0 0 25px #ff0;
+            z-index: 5;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            pointer-events: none;
+        }
+        @media (max-width: 768px) {
+            .theory-panel {
+                width: 95%;
+                left: 2.5%;
+                top: 10px;
+                padding: 12px;
+            }
+            .ui {
+                width: 95%;
+                padding: 12px;
+            }
+            .controls {
+                gap: 8px;
+            }
+            .btn {
+                min-width: 90px;
+                padding: 6px 12px;
+                font-size: 12px;
+            }
+            h1 {
+                font-size: 1.2em;
+            }
+            .status {
+                font-size: 1em;
+                padding: 10px;
+                min-height: 50px;
+            }
+        }
+        @media (max-width: 480px) {
+            .ui {
+                width: 98%;
+                padding: 10px;
+            }
+            .phase-labels {
+                font-size: 0.8em;
+            }
+            .phase-label {
+                padding: 2px 4px;
+                font-size: 10px;
+            }
+            .btn {
+                min-width: 80px;
+                padding: 5px 10px;
+                font-size: 11px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="container"></div>
+    
+    <div class="fps-counter">FPS: 60</div>
+    
+    <div class="pivot-indicator" id="pivotIndicator">枢</div>
+    
+    <div class="compatibility-warning" id="compatibilityWarning">
+        您的浏览器可能不支持WebGL功能<br>
+        请尝试使用Chrome、Firefox或Edge等现代浏览器
+    </div>
+    
+    <div class="theory-panel">
+        <h2>气-形循环宇宙论</h2>
+        <p><strong>气 (Qi)</strong>：宇宙本源的能量状态，表现为量子尺度的混沌流动，是万物生成的原始动力。</p>
+        <p><strong>形 (Form)</strong>：能量凝聚形成的稳定结构，表现为宏观尺度的有序形态，是宇宙万物的显现。</p>
+        <p><strong>枢 (Pivot)</strong>：调节气与形相互转化的动态机制，分为<strong>枢(反引力)</strong>和<strong>枢(引力)</strong>两种转化方向。</p>
+        <p><strong>循环 (Cycle)</strong>：气与形之间的转化是永恒的、循环的动态过程，构成宇宙的"呼吸"。</p>
+    </div>
+    
+    <div class="language-switcher">
+        <button id="langCN" class="lang-btn active">中文</button>
+        <button id="langEN" class="lang-btn">English</button>
+    </div>
+    
+    <div class="ui">
+        <h1 id="title">气-形循环 · 完整演化</h1>
+        
+        <div class="phase-bar">
+            <div class="phase-progress" id="phaseProgress"></div>
+            <div class="phase-marker" id="phaseMarker"></div>
+        </div>
+        
+        <div class="phase-labels">
+            <div class="phase-label active" id="labelQi">气 (量子态)</div>
+            <div class="phase-label" id="labelShu1">枢 (反引力)</div>
+            <div class="phase-label" id="labelXing">形 (时空态)</div>
+            <div class="phase-label" id="labelShu2">枢 (引力)</div>
+            <div class="phase-label" id="labelQi2">器 (物质态)</div>
+        </div>
+        
+        <div id="status" class="status">
+            🌌 气态演化中 · 量子混沌流动
+        </div>
+        
+        <div class="controls">
+            <button id="autoBtn" class="btn">⏸️ 暂停自动</button>
+            <button id="speedDown" class="btn">➖ 慢速</button>
+            <button id="speedUp" class="btn">➕ 快速</button>
+            <button id="resetBtn" class="btn">🔄 重新开始</button>
+        </div>
+        
+        <div class="instructions" id="instructions">
+            系统自动演示完整循环 · 可手动控制速度 · 枢表示转化临界点
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script>
+        // ========== 气-形循环宇宙论3D模拟系统 ==========
+        let scene, camera, renderer, particles, geometry, material;
+        let isAutoPlaying = true;
+        let currentPhase = 0; // 0:气, 1:枢1, 2:形, 3:枢2, 4:器
+        let phaseProgress = 0;
+        let autoSpeed = 1.0;
+        let phaseTimer = 0;
+        let lastTimestamp = 0;
+        let frameCount = 0;
+        let fps = 0;
+        
+        // 枢指示器元素
+        const pivotIndicator = document.getElementById('pivotIndicator');
+        
+        // 多语言支持
+        const translations = {
+            'zh': {
+                'title': '气-形循环 · 完整演化',
+                'labelQi': '气 (量子态)',
+                'labelShu1': '枢 (反引力)',
+                'labelXing': '形 (时空态)', 
+                'labelShu2': '枢 (引力)',
+                'labelQi2': '器 (物质态)',
+                'statusQi': '🌌 气态演化中 · 量子混沌流动',
+                'statusShu1': '⚡ 枢(反引力)作用中 · 气→形转换',
+                'statusXing': '🔷 形态稳定 · 时空结构形成', 
+                'statusShu2': '⚡ 枢(引力)作用中 · 形→器转换',
+                'statusQi2': '🔺 器物生成 · 物质功能显现',
+                'btnPause': '⏸️ 暂停自动',
+                'btnPlay': '▶️ 开始自动',
+                'btnSlow': '➖ 慢速',
+                'btnFast': '➕ 快速',
+                'btnReset': '🔄 重新开始',
+                'instructions': '系统自动演示完整循环 · 可手动控制速度 · 枢表示转化临界点'
+            },
+            'en': {
+                'title': 'Qi-Form Cycle · Complete Evolution',
+                'labelQi': 'Qi (Quantum)',
+                'labelShu1': 'Pivot (Anti-Gravity)',
+                'labelXing': 'Form (Spacetime)',
+                'labelShu2': 'Pivot (Gravity)',
+                'labelQi2': 'Device (Matter)',
+                'statusQi': '🌌 Qi State · Quantum Chaos Flow',
+                'statusShu1': '⚡ Pivot(Anti-Gravity) Active · Qi→Form Transforming',
+                'statusXing': '🔷 Form State · Spacetime Structure Forming',
+                'statusShu2': '⚡ Pivot(Gravity) Active · Form→Device Transforming',
+                'statusQi2': '🔺 Device State · Material Function Manifesting',
+                'btnPause': '⏸️ Pause Auto',
+                'btnPlay': '▶️ Play Auto', 
+                'btnSlow': '➖ Slower',
+                'btnFast': '➕ Faster',
+                'btnReset': '🔄 Restart',
+                'instructions': 'Auto-demonstration of complete cycle · Manual speed control · Pivot indicates transformation critical point'
+            }
+        };
+        
+        let currentLang = 'zh';
+
+        function init() {
+            // 检查WebGL支持
+            if (!isWebGLAvailable()) {
+                document.getElementById('compatibilityWarning').style.display = 'block';
+                return;
+            }
+            
+            // 创建场景
+            scene = new THREE.Scene();
+            scene.background = new THREE.Color(0x000022);
+            scene.fog = new THREE.Fog(0x000033, 20, 100);
+            
+            // 创建相机
+            camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+            camera.position.set(0, 0, 60);
+            
+            // 创建渲染器
+            renderer = new THREE.WebGLRenderer({ 
+                antialias: true, 
+                alpha: true,
+                powerPreference: "high-performance"
+            });
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+            document.getElementById('container').appendChild(renderer.domElement);
+            
+            // 创建背景星云
+            createNebulaBackground();
+            
+            // 创建粒子系统
+            createParticles(1500);
+            
+            // 增强灯光系统
+            const ambientLight = new THREE.AmbientLight(0x404040, 0.6);
+            scene.add(ambientLight);
+            
+            const pointLight = new THREE.PointLight(0xffffff, 1.8, 200);
+            pointLight.position.set(40, 40, 40);
+            scene.add(pointLight);
+            
+            const pointLight2 = new THREE.PointLight(0x00aaff, 1.2, 150);
+            pointLight2.position.set(-40, -40, -40);
+            scene.add(pointLight2);
+            
+            const pointLight3 = new THREE.PointLight(0xff00ff, 0.8, 100);
+            pointLight3.position.set(0, 0, 50);
+            scene.add(pointLight3);
+            
+            // 事件监听
+            window.addEventListener('resize', onWindowResize);
+            document.getElementById('autoBtn').addEventListener('click', toggleAutoPlay);
+            document.getElementById('speedDown').addEventListener('click', () => adjustSpeed(0.7));
+            document.getElementById('speedUp').addEventListener('click', () => adjustSpeed(1.5));
+            document.getElementById('resetBtn').addEventListener('click', resetSystem);
+            document.getElementById('langCN').addEventListener('click', () => setLanguage('zh'));
+            document.getElementById('langEN').addEventListener('click', () => setLanguage('en'));
+            
+            // 开始动画
+            lastTimestamp = performance.now();
+            animate();
+            setLanguage('zh');
+        }
+        
+        function isWebGLAvailable() {
+            try {
+                const canvas = document.createElement('canvas');
+                return !!(window.WebGLRenderingContext && 
+                    (canvas.getContext('webgl') || canvas.getContext('experimental-webgl')));
+            } catch (e) {
+                return false;
+            }
+        }
+        
+        function createNebulaBackground() {
+            // 创建星空背景
+            const starGeometry = new THREE.BufferGeometry();
+            const starCount = 3000;
+            const positions = new Float32Array(starCount * 3);
+            const starColors = new Float32Array(starCount * 3);
+            
+            for (let i = 0; i < starCount * 3; i += 3) {
+                positions[i] = (Math.random() - 0.5) * 2000;
+                positions[i + 1] = (Math.random() - 0.5) * 2000;
+                positions[i + 2] = (Math.random() - 0.5) * 2000;
+                
+                // 随机星星颜色
+                const colorIntensity = 0.5 + Math.random() * 0.5;
+                starColors[i] = colorIntensity;
+                starColors[i + 1] = colorIntensity;
+                starColors[i + 2] = colorIntensity;
+            }
+            
+            starGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+            starGeometry.setAttribute('color', new THREE.BufferAttribute(starColors, 3));
+            
+            const starMaterial = new THREE.PointsMaterial({
+                color: 0xffffff,
+                size: 2,
+                sizeAttenuation: true,
+                transparent: true,
+                opacity: 0.9,
+                vertexColors: true
+            });
+            
+            const stars = new THREE.Points(starGeometry, starMaterial);
+            scene.add(stars);
+            
+            // 添加彩色星云效果
+            const nebulaGeometry = new THREE.SphereGeometry(150, 64, 64);
+            const nebulaMaterial = new THREE.MeshBasicMaterial({
+                color: 0x440066,
+                transparent: true,
+                opacity: 0.4,
+                side: THREE.BackSide
+            });
+            
+            const nebula = new THREE.Mesh(nebulaGeometry, nebulaMaterial);
+            scene.add(nebula);
+        }
+        
+        function createParticles(count) {
+            if (particles) scene.remove(particles);
+            
+            geometry = new THREE.BufferGeometry();
+            const positions = new Float32Array(count * 3);
+            const colors = new Float32Array(count * 3);
+            const sizes = new Float32Array(count);
+            
+            // 初始状态：完全混沌的气态
+            for (let i = 0; i < count * 3; i += 3) {
+                const radius = 15 + Math.random() * 35;
+                const theta = Math.random() * Math.PI * 2;
+                const phi = Math.acos((Math.random() * 2) - 1);
+                
+                positions[i] = radius * Math.sin(phi) * Math.cos(theta);
+                positions[i + 1] = radius * Math.sin(phi) * Math.sin(theta);
+                positions[i + 2] = radius * Math.cos(phi);
+                
+                // 初始亮紫色（气）
+                colors[i] = 1.0;    // R
+                colors[i + 1] = 0.3; // G
+                colors[i + 2] = 1.0; // B
+                
+                sizes[i/3] = Math.random() * 3 + 2;
+            }
+            
+            geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+            geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+            geometry.setAttribute('size', new THREE.BufferAttribute(sizes, 1));
+            
+            material = new THREE.PointsMaterial({
+                size: 3.5,
+                vertexColors: true,
+                transparent: true,
+                opacity: 1.0,
+                sizeAttenuation: true,
+                blending: THREE.AdditiveBlending
+            });
+            
+            particles = new THREE.Points(geometry, material);
+            scene.add(particles);
+        }
+        
+        function updateParticles(timestamp) {
+            const deltaTime = Math.min(0.1, (timestamp - lastTimestamp) / 1000);
+            lastTimestamp = timestamp;
+            
+            if (isAutoPlaying) {
+                phaseTimer += deltaTime * autoSpeed;
+                
+                // 每阶段持续时间
+                const phaseDuration = 6; // 每个阶段持续6秒
+                
+                // 计算当前阶段
+                if (phaseTimer < phaseDuration) {
+                    currentPhase = 0; // 气
+                    phaseProgress = phaseTimer / phaseDuration;
+                } else if (phaseTimer < phaseDuration * 2) {
+                    currentPhase = 1; // 枢1
+                    phaseProgress = (phaseTimer - phaseDuration) / phaseDuration;
+                } else if (phaseTimer < phaseDuration * 3) {
+                    currentPhase = 2; // 形
+                    phaseProgress = (phaseTimer - phaseDuration * 2) / phaseDuration;
+                } else if (phaseTimer < phaseDuration * 4) {
+                    currentPhase = 3; // 枢2
+                    phaseProgress = (phaseTimer - phaseDuration * 3) / phaseDuration;
+                } else if (phaseTimer < phaseDuration * 5) {
+                    currentPhase = 4; // 器
+                    phaseProgress = (phaseTimer - phaseDuration * 4) / phaseDuration;
+                } else {
+                    phaseTimer = 0; // 循环重置
+                    currentPhase = 0;
+                    phaseProgress = 0;
+                }
+                
+                // 更新UI显示
+                updatePhaseDisplay();
+            }
+            
+            const positions = geometry.attributes.position.array;
+            const colors = geometry.attributes.color.array;
+            
+            // 更新枢指示器
+            updatePivotIndicator();
+            
+            for (let i = 0; i < positions.length; i += 3) {
+                const x = positions[i], y = positions[i + 1], z = positions[i + 2];
+                const distance = Math.sqrt(x*x + y*y + z*z);
+                
+                switch(currentPhase) {
+                    case 0: // 气态 - 亮紫色，完全混沌
+                        // 增强随机运动
+                        positions[i] += (Math.random() - 0.5) * 1.2;
+                        positions[i + 1] += (Math.random() - 0.5) * 1.2;
+                        positions[i + 2] += (Math.random() - 0.5) * 1.2;
+                        
+                        // 边界反弹
+                        if (distance > 45) {
+                            positions[i] -= x * 0.06;
+                            positions[i + 1] -= y * 0.06;
+                            positions[i + 2] -= z * 0.06;
+                        }
+                        
+                        // 亮紫色
+                        colors[i] = 1.0;    // R
+                        colors[i + 1] = 0.3; // G
+                        colors[i + 2] = 1.0; // B
+                        break;
+                        
+                    case 1: // 枢1 - 亮黄色，气→形转换
+                        // 向中心聚集 + 保持一些随机性
+                        const attraction1 = phaseProgress * 0.04;
+                        const chaos1 = (1 - phaseProgress) * 0.4;
+                        
+                        positions[i] -= x * attraction1 + (Math.random() - 0.5) * chaos1;
+                        positions[i + 1] -= y * attraction1 + (Math.random() - 0.5) * chaos1;
+                        positions[i + 2] -= z * attraction1 + (Math.random() - 0.5) * chaos1;
+                        
+                        // 亮黄色过渡（紫→黄）
+                        colors[i] = 1.0;
+                        colors[i + 1] = 0.3 + phaseProgress * 0.7;
+                        colors[i + 2] = 1.0 - phaseProgress * 0.7;
+                        break;
+                        
+                    case 2: // 形态 - 亮青色，稳定结构
+                        // 强吸引力，形成球状结构
+                        const targetDistance = 18;
+                        const attraction2 = 0.07;
+                        
+                        if (distance > targetDistance) {
+                            positions[i] -= x * attraction2;
+                            positions[i + 1] -= y * attraction2;
+                            positions[i + 2] -= z * attraction2;
+                        }
+                        
+                        // 添加轻微波动
+                        positions[i] += Math.sin(timestamp * 0.001 + i) * 0.1;
+                        positions[i + 1] += Math.cos(timestamp * 0.001 + i) * 0.1;
+                        
+                        // 亮青色
+                        colors[i] = 0.2;
+                        colors[i + 1] = 1.0;
+                        colors[i + 2] = 1.0;
+                        break;
+                        
+                    case 3: // 枢2 - 亮黄色，形→器转换
+                        // 从球状结构向立方体结构转换
+                        const cubeSize = 25;
+                        const transition = phaseProgress;
+                        
+                        // 计算立方体目标位置
+                        const angle = Math.atan2(y, x);
+                        const verticalAngle = Math.acos(z / (distance || 1));
+                        
+                        // 将球面坐标映射到立方体表面
+                        const targetX = Math.sign(x) * cubeSize * Math.abs(Math.cos(angle)) * Math.abs(Math.sin(verticalAngle));
+                        const targetY = Math.sign(y) * cubeSize * Math.abs(Math.sin(angle)) * Math.abs(Math.sin(verticalAngle));
+                        const targetZ = Math.sign(z) * cubeSize * Math.abs(Math.cos(verticalAngle));
+                        
+                        // 平滑过渡
+                        positions[i] += (targetX - x) * 0.03;
+                        positions[i + 1] += (targetY - y) * 0.03;
+                        positions[i + 2] += (targetZ - z) * 0.03;
+                        
+                        // 亮黄色过渡（青→黄→红）
+                        colors[i] = 0.2 + transition * 0.8;
+                        colors[i + 1] = 1.0 - transition * 0.3;
+                        colors[i + 2] = 1.0 - transition * 0.9;
+                        break;
+                        
+                    case 4: // 器物 - 亮红色，高度结构化
+                        // 维持立方体结构
+                        const finalCubeSize = 30;
+                        
+                        // 更强的立方体约束
+                        const finalAngle = Math.atan2(y, x);
+                        const finalVerticalAngle = Math.acos(z / (distance || 1));
+                        
+                        const finalX = Math.sign(x) * finalCubeSize * Math.abs(Math.cos(finalAngle)) * Math.abs(Math.sin(finalVerticalAngle));
+                        const finalY = Math.sign(y) * finalCubeSize * Math.abs(Math.sin(finalAngle)) * Math.abs(Math.sin(finalVerticalAngle));
+                        const finalZ = Math.sign(z) * finalCubeSize * Math.abs(Math.cos(finalVerticalAngle));
+                        
+                        positions[i] += (finalX - x) * 0.07;
+                        positions[i + 1] += (finalY - y) * 0.07;
+                        positions[i + 2] += (finalZ - z) * 0.07;
+                        
+                        // 添加结构振动
+                        positions[i] += Math.sin(timestamp * 0.002 + i) * 0.2;
+                        positions[i + 1] += Math.cos(timestamp * 0.002 + i) * 0.2;
+                        
+                        // 亮红色
+                        colors[i] = 1.0;
+                        colors[i + 1] = 0.2;
+                        colors[i + 2] = 0.2;
+                        break;
+                }
+            }
+            
+            geometry.attributes.position.needsUpdate = true;
+            geometry.attributes.color.needsUpdate = true;
+            
+            // 自动旋转相机
+            const time = timestamp * 0.0003;
+            camera.position.x = Math.sin(time * 0.2) * 70;
+            camera.position.y = Math.cos(time * 0.3) * 50;
+            camera.position.z = Math.cos(time * 0.1) * 70;
+            camera.lookAt(scene.position);
+        }
+        
+        function updatePivotIndicator() {
+            // 在枢阶段显示指示器
+            if (currentPhase === 1 || currentPhase === 3) {
+                const scale = 1.0 + Math.sin(performance.now() * 0.01) * 0.3;
+                const opacity = 0.7 + Math.sin(performance.now() * 0.005) * 0.3;
+                
+                pivotIndicator.style.transform = `translate(-50%, -50%) scale(${scale})`;
+                pivotIndicator.style.opacity = opacity;
+                
+                // 根据枢的类型设置不同颜色
+                if (currentPhase === 1) {
+                    pivotIndicator.textContent = currentLang === 'zh' ? '枢(反引力)' : 'Pivot(Anti-Gravity)';
+                    pivotIndicator.style.color = '#ff0';
+                    pivotIndicator.style.textShadow = '0 0 30px #ff0';
+                } else {
+                    pivotIndicator.textContent = currentLang === 'zh' ? '枢(引力)' : 'Pivot(Gravity)';
+                    pivotIndicator.style.color = '#f90';
+                    pivotIndicator.style.textShadow = '0 0 30px #f90';
+                }
+            } else {
+                pivotIndicator.style.opacity = 0;
+            }
+        }
+        
+        function updatePhaseDisplay() {
+            // 更新阶段标记位置
+            const marker = document.getElementById('phaseMarker');
+            const progressBar = document.getElementById('phaseProgress');
+            const phasePositions = [0, 0.2, 0.4, 0.6, 0.8];
+            
+            marker.style.left = `${(phasePositions[currentPhase] + phaseProgress * 0.2) * 100}%`;
+            progressBar.style.width = `${(phasePositions[currentPhase] + phaseProgress * 0.2) * 100}%`;
+            
+            // 更新激活的阶段标签
+            document.querySelectorAll('.phase-label').forEach((label, index) => {
+                label.classList.toggle('active', index === currentPhase);
+                
+                // 为枢阶段添加特殊样式
+                if (index === 1 || index === 3) {
+                    if (index === currentPhase) {
+                        label.style.background = index === 1 ? 
+                            'rgba(255, 255, 0, 0.5)' : 'rgba(255, 150, 0, 0.5)';
+                    } else {
+                        label.style.background = 'rgba(0, 0, 0, 0.3)';
+                    }
+                }
+            });
+            
+            // 更新状态文本
+            const status = document.getElementById('status');
+            const statusTexts = [
+                translations[currentLang].statusQi,
+                translations[currentLang].statusShu1, 
+                translations[currentLang].statusXing,
+                translations[currentLang].statusShu2,
+                translations[currentLang].statusQi2
+            ];
+            
+            status.textContent = statusTexts[currentPhase];
+            
+            // 更新状态颜色和发光效果
+            const statusColors = [
+                'rgba(255, 0, 255, 0.4)',    // 气 - 亮紫色
+                'rgba(255, 255, 0, 0.4)',    // 枢1 - 亮黄色
+                'rgba(0, 255, 255, 0.4)',    // 形 - 亮青色
+                'rgba(255, 150, 0, 0.4)',    // 枢2 - 橙黄色
+                'rgba(255, 0, 0, 0.4)'       // 器 - 亮红色
+            ];
+            
+            const glowColors = [
+                '0 0 25px rgba(255, 0, 255, 0.6)',
+                '0 0 25px rgba(255, 255, 0, 0.6)',
+                '0 0 25px rgba(0, 255, 255, 0.6)',
+                '0 0 25px rgba(255, 150, 0, 0.6)',
+                '0 0 25px rgba(255, 0, 0, 0.6)'
+            ];
+            
+            status.style.background = statusColors[currentPhase];
+            status.style.boxShadow = glowColors[currentPhase];
+            status.style.borderColor = statusColors[currentPhase].replace('0.4', '0.7');
+        }
+        
+        function toggleAutoPlay() {
+            isAutoPlaying = !isAutoPlaying;
+            document.getElementById('autoBtn').textContent = 
+                isAutoPlaying ? translations[currentLang].btnPause : translations[currentLang].btnPlay;
+        }
+        
+        function adjustSpeed(factor) {
+            autoSpeed *= factor;
+            autoSpeed = Math.max(0.2, Math.min(3.0, autoSpeed)); // 限制速度范围
+        }
+        
+        function resetSystem() {
+            phaseTimer = 0;
+            currentPhase = 0;
+            phaseProgress = 0;
+            createParticles(1500);
+            updatePhaseDisplay();
+            pivotIndicator.style.opacity = 0;
+        }
+        
+        function setLanguage(lang) {
+            currentLang = lang;
+            
+            // 更新界面文本
+            document.getElementById('title').textContent = translations[lang].title;
+            document.getElementById('labelQi').textContent = translations[lang].labelQi;
+            document.getElementById('labelShu1').textContent = translations[lang].labelShu1;
+            document.getElementById('labelXing').textContent = translations[lang].labelXing;
+            document.getElementById('labelShu2').textContent = translations[lang].labelShu2;
+            document.getElementById('labelQi2').textContent = translations[lang].labelQi2;
+            document.getElementById('autoBtn').textContent = 
+                isAutoPlaying ? translations[lang].btnPause : translations[currentLang].btnPlay;
+            document.getElementById('speedDown').textContent = translations[lang].btnSlow;
+            document.getElementById('speedUp').textContent = translations[lang].btnFast;
+            document.getElementById('resetBtn').textContent = translations[lang].btnReset;
+            document.getElementById('instructions').textContent = translations[lang].instructions;
+            
+            // 更新语言按钮状态
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.getElementById(`lang${lang.toUpperCase()}`).classList.add('active');
+            
+            // 更新状态文本
+            updatePhaseDisplay();
+        }
+        
+        function updateFPS(timestamp) {
+            frameCount++;
+            
+            if (timestamp >= lastTimestamp + 1000) {
+                fps = frameCount;
+                frameCount = 0;
+                lastTimestamp = timestamp;
+                document.querySelector('.fps-counter').textContent = `FPS: ${fps}`;
+            }
+        }
+        
+        function animate(timestamp = 0) {
+            requestAnimationFrame(animate);
+            
+            updateFPS(timestamp);
+            updateParticles(timestamp);
+            renderer.render(scene, camera);
+        }
+        
+        function onWindowResize() {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        }
+        
+        // 启动系统
+        init();
+    </script>
+</body>
+</html>
