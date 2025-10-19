@@ -1,42 +1,70 @@
-关于“引力作为时空派生属性”的核心论证已在OSF发布，欢迎阅读与讨论：
-​​《[文档名称]》​​：https://osf.io/yxsv2
-# Qi---Phenomenon---Form-Theory
-A meta-framework integrating Eastern philosophy (Qi-Phenomenon-Form) with quantum gravity and cosmology.
-## 深度阅读与完整理论
-本理论的详细论述、完整论文及演变历程，请访问OSF项目主页：
-**https://doi.org/10.17605/OSF.IO/TXQ48**
-# Qi---Phenomenon---Form-Theory
-A meta-framework integrating Eastern philosophy (Qi-Phenomenon-Form) with quantum gravity and cosmology.
-
-## 🧭 内容导航 / Content Guide
-
-本仓库包含该理论的核心阐述文件，建议按以下顺序阅读：
-
-1.  **理论框架**：
-    *   `Metatheoretical Mind Map.pdf`：建议首先浏览此脑图，以俯瞰理论全貌。
-    *   `元理论：气形象理论及其应用.pdf`：核心框架的中文阐述。
-2.  **专题论述**：
-    *   `气形象理论之双引擎枢机论-最终阐述.pdf`：关于“双引擎”模型的深度论文。
-    *   `Meta-Theory.pdf`：理论的英文概述。
-3.  **完整体系**：
-    *   **深度阅读与完整理论**：本理论的详细论述、完整论文及演变历程，请访问OSF项目主页：**https://doi.org/10.17605/OSF.IO/TXQ48**
-      
-All formal papers and core framework mind maps of this theory are archived on the OSF project to ensure version permanence and citation consistency.
-Please click the links below to access and download:
-•
-《On the Derivative Nature of Gravity》 (PDF): https://osf.io/93swu/
-•
-《Core Mind Map of Qi-Phenomenon-Form Theory》 (PDF): https://osf.io/eqnjz/
-•
-Visit the project homepage to view all resources: https://osf.io/4amgp/
-
-## 💬 互动与讨论
-我们欢迎任何深入的讨论与交流。您可以通过 [GitHub Issues] 功能提出您的问题或见解。
-本理论（气形象理论）的构建工作已暂告一段落。其核心框架已如种子般寄存数字土壤之中，以期其内在生命力能随时间自然生发。
-理论之价值，终不在于永无止境的言说与辩驳，而在于其能否以及如何照亮寻常生活。真正的“探赜索隐”，绝非远离尘嚣的苦思，而是回归“担水砍柴”之平常，以精微之心感通万物运行之气象。
-故此，理论之树既已种下，便无需时时照看，任其沐浴日月光华，顺应四时之气，静待花开果成之日。
-万物并作，吾以观复。夫物芸芸，各复归其根。归根曰静，是谓复命。
-The constructive phase of this work (The Qi-Image-Form-Artifact Theory) has reached its natural conclusion. Its core framework has been deposited like a seed in the digital soil, entrusted to the care of time and its own innate vitality.
-The ultimate value of a theory lies not in perpetual discourse and debate, but in its ability to illuminate ordinary life. True "profound exploration" does not require withdrawal from the world; it is found in returning to the simplicity of "carrying water and chopping wood," perceiving the subtle manifestations of all things with a refined and attentive heart.
-Thus, the work is done, The tree has been planted; it need not be constantly tended. Let it be bathed in the light of the sun and moon, let it move with the Qi of the four seasons, and let us await the day it blossoms and bears fruit in stillness.
-"The ten thousand things arise together, and I thereby watch their return. The teeming things all return to their root. Returning to the root is called stillness. This is what is meant by returning to one's destiny." — Laozi (Dao De Jing)
+Qi-Image-Form Theory: A Meta-Theoretical Framework Integrating Eastern Wisdom and Modern Science
+​​Keywords:​​ Qi-Image-Form Theory, Meta-theory, I Ching, Quantum Gravity, General Relativity, Yin-Yang Five Elements, Opening-Closing-Pivoting, Creative Chain, Traceability Chain, Heaven-Human Unity, Cognitive Science, Interdisciplinary Research, Eastern Philosophy, Scientific Paradigm Revolution
+📖 Introduction
+The ​​Qi-Image-Form Theory​​, proposed by Chen Haiping, is a ​​meta-theoretical framework​​ deeply rooted in Eastern philosophy (I Ching, Daoism, Traditional Chinese Medicine). With "​​Qi → Image → Form → Artifact​​" as its core creative chain and "​​Artifact → Form → Image → Qi​​" as its traceability chain, coupled with the "​​Opening-Closing-Pivoting​​" dynamic regulation mechanism, it provides a unified theoretical basis for understanding various phenomena from cosmic generation to cognitive processes.
+This theory directly addresses the ​​fundamental contradiction between general relativity and quantum mechanics​​ in modern physics. Rather than attempting a forced unification within the existing framework, it elevates the cognitive dimension, pointing out that the two are essentially manifestations of the same cosmic origin (Qi) at different levels, and their contradiction stems from cognitive limitations rather than physical reality itself.
+💡 Core Concepts
+​​Qi​​: The origin energy and ultimate reality of the universe, formless but containing all potential possibilities
+​​Image​​: The dynamic patterns, trends and relationships revealed in Qi's operation, the critical state of Qi transforming into Form
+​​Form​​: The fixed structures, patterns or laws formed after Image condenses and stabilizes
+​​Artifact​​: The concretization and materialization of Form, all observable and operable concrete things
+​​Creative Chain​​: The process of cosmic generation and creation (Pǔ → Qi → Image → Form → Artifact)
+​​Traceability Chain​​: The reverse process of cognition (Artifact → Form → Image → Qi → Pǔ)
+​​Opening-Closing-Pivoting​​: The most critical dynamic conversion mechanism and function in cognition and practice
+🌟 Theoretical Value
+​​Resolves Physics Dilemmas​​: Provides new philosophical framework and solutions for quantum gravity problems
+​​Cognitive Science Innovation​​: Offers a creative methodology of "observing images to create artifacts", surpassing traditional analytical reduction paradigms
+​​Interdisciplinary Application​​: Applicable to multiple fields including physics, artificial intelligence, medicine, and organizational leadership
+​​Cultural Heritage Innovation​​: Modern interpretation of traditional Eastern wisdom, promoting dialogue and integration between Chinese and Western philosophy
+🚀 Getting Started
+Suggested path to explore this theory:
+​​Read core documents​​: Carefully study the abstract and introduction of "Meta-theory: Qi-Image-Form Theory and Its Applications"
+​​Understand core concepts​​: Focus on mastering the "Qi-Image-Form-Artifact" creative chain and "Opening-Closing-Pivoting" mechanism
+​​Application practice​​: Try using this framework to analyze core issues in your field
+​​Join discussions​​: Participate in relevant academic community exchanges and practices
+🤝 Contributing
+We welcome contributions in the following forms:
+Theoretical development and improvement
+Interdisciplinary application case studies
+Translation and dissemination
+Academic discussion and criticism
+📄 License
+This document is based on "Meta-theory: Qi-Image-Form Theory and Its Applications". Copyright belongs to the original author. Welcome to use for academic and personal research with attribution.
+气形象理论》—— 贯通东方智慧与现代科学的元理论框架
+​​关键词：​​ 气形象理论，元理论，易经，量子引力，广义相对论，阴阳五行，开阖枢，创生链，溯源链，天人合一，认知科学，跨学科研究，东方哲学，科学范式革命
+📖 理论简介
+《气形象理论》由陈海平提出，是一套深植于东方哲学（易经、道家、中医）精髓的​​元理论框架​​。该理论以"​​气→象→形→器​​"为核心创生链，以"​​器→形→象→气​​"为溯源链，配以"​​开阖枢​​"动态调节机制，为理解从宇宙生成到认知过程的各类现象提供了统一的理论基础。
+本理论直面现代物理学中​​广义相对论与量子力学的根本矛盾​​，并非试图在现有框架内强行统一，而是通过提升认知维度，指出二者本质上是同一宇宙本源（气）在不同层面的显现，其矛盾源于认知层面的局限而非物理实在本身。
+💡 核心概念
+​​气 (Qi)​​：宇宙的本源能量与终极实在，无形无相但蕴含一切潜在可能性
+​​象 (Image)​​：气运行中显现的动态模式、趋势与关系，是气向形转化的临界状态
+​​形 (Form)​​：象凝练稳定后形成的固定结构、模式或法则
+​​器 (Artifact)​​：形的具体化与物质化体现，一切可被观测操作的具体事物
+​​创生链​​：宇宙生成与创造过程（朴→气→象→形→器）
+​​溯源链​​：认知的逆向过程（器→形→象→气→朴）
+​​开阖枢​​：认知与实践中最关键的动态转换机制与功能
+🌟 理论价值
+​​解决物理学困境​​：为量子引力问题提供全新的哲学框架和解决思路
+​​认知科学创新​​：提供"观象制器"的创造性方法论，超越传统的分析还原范式
+​​跨学科应用​​：可应用于物理学、人工智能、医学、组织领导等多个领域
+​​文化传承创新​​：现代化阐释东方传统智慧，促进中西哲学对话与融合
+🚀 快速开始
+探索本理论的建议路径：
+​​阅读核心文档​​：精读《元理论:气形象理论及其应用》摘要与引言
+​​理解核心概念​​：重点掌握"气-象-形-器"创生链与"开阖枢"机制
+​​应用实践​​：尝试用该框架分析本领域的核心问题
+​​加入讨论​​：参与相关学术社区交流与实践
+🤝 参与贡献
+我们欢迎以下形式的贡献：
+理论发展与完善
+跨学科应用案例研究
+翻译与传播
+学术讨论与批评
+📄 许可证
+本文档内容基于《元理论:气形象理论及其应用》进行概括与导读。版权归原作者所有，欢迎在注明出处的前提下用于学术与个人研究。
+🔗 联系方式
+​​作者​​：陈海平
+​​核心概念​​：气形象理论，元理论，创生链，溯源链，开阖枢
+🔗 Contact
+​​Author​​: Chen Haiping
+​​Core Concepts​​: Qi-Image-Form Theory, Meta-theory, Creative Chain, Traceability Chain, Opening-Closing-Pivoting
